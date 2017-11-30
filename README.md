@@ -31,7 +31,7 @@ In a for loop let redeclares the variable at each iteration
 var funcs = [];
 for (let i = 0; i < 5; i++) {
   funcs.push( function(){
-    console.log( i );
+    console.log(i);
   } );
 }
 funcs[3]();	
@@ -46,7 +46,7 @@ A block scope declaration that is readonly. The variable can only be assigned on
 {
 const a = [1,2,3];
 	a.push( 4 );
-	console.log( a );		// [1,2,3,4]
+	console.log(a);		// [1,2,3,4]
 
 	a = 42;				// TypeError!
 }
@@ -68,7 +68,7 @@ function foo(...args) {
 	console.log( args );
 }
 
-foo( 1, 2, 3, 4, 5);	//displays [1, 2, 3, 4, 5]		
+foo( 1, 2, 3, 4, 5);	//[1, 2, 3, 4, 5]		
 
 ```
 
@@ -79,7 +79,7 @@ function greet (name="world") {
   console.log("Hello, " + name);
 }
 
-greet();		//displays Hello World
+greet();		//Hello World
 
 ```
 
@@ -120,27 +120,27 @@ Multiline strings:
 Arrow functions have a lexical `this` and lexical arguments `=>` is a syntactic stand-in for `var self = this` or `.bind(this)`.
 
 ```js
-var greet = () => console.log(“Hello, World”);
+let greet = () => console.log("Hello, World");
 ```
 
 A function with one parameter:
 
 ```js
-var greet = name => console.log(“Hello, ” + name);
+let greet = name => console.log(`Hello, ${name}`);
 ```
 
 A function with more than one parameter:
 
 ```js
-var greet = (fname, lname) => console.log(“Hello, ” + fname + “ “ + name);
+let greet = (fname, lname) => console.log(`Hello, ${fname} ${lname}`);
 ```
 
 A function with multiple statements:
 
 ```
 var greet = (fname, lname) => {
-	let name =  fname + “ “ + name;
-console.log(“Hello, ” + name);
+	let name =  `${fname} ${name}`;
+  console.log(`Hello, ${name}`);
 }
 ```
 
@@ -160,7 +160,7 @@ for (let num of arr) {
 
 Loop over a string:
 ```js
-let str = “Hello”;
+let str = "Hello";
 for (let char of str) {
 	console.log(char);
 }
@@ -182,7 +182,7 @@ symbols are basically intended to replace the use of magic strings (arbitrary st
 Determine if a string begins with a substring:
 
 ```js
-“Hello, World”.startsWith(“hello”);	//true
+"Hello, World".startsWith("Hello");	//true
 ```
 
 Determine if a strings ends with a substring:
